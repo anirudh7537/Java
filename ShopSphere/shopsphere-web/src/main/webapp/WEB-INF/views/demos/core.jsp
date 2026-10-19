@@ -1,0 +1,4 @@
+<%@ include file="../fragments/header.jsp" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<section class="container catalog-page"><div class="page-title"><span class="eyebrow">JSTL / CORE AND FUNCTIONS</span><h1>Tag-driven output</h1></div><div class="form-panel-wide"><c:set var="productNames" value="Wireless Headphones,Desk Lamp,Field Notes"/><c:set var="demoProducts" value="${fn:split(productNames, ',')}"/><c:set var="showCatalog" value="true"/><c:if test="${showCatalog}"><c:choose><c:when test="${not empty demoProducts}"><ul><c:forEach var="name" items="${demoProducts}"><li><c:out value="${fn:toUpperCase(name)}"/></li></c:forEach></ul></c:when><c:otherwise><p>No items in this demonstration.</p></c:otherwise></c:choose></c:if><p class="muted">Demonstrates c:set, c:if, c:choose, c:forEach and JSTL Functions. These values are syllabus examples, not catalog data.</p></div></section>
+<%@ include file="../fragments/footer.jsp" %>

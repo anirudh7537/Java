@@ -1,0 +1,3 @@
+<%@ include file="../fragments/header.jsp" %>
+<section class="container catalog-page"><div class="page-title"><span class="eyebrow">JNDI / RESOURCE LOOKUP</span><h1>Application naming</h1></div><div class="form-panel-wide"><c:choose><c:when test="${not empty lookupValue}"><p>Lookup result from <code>java:comp/env/shopsphere/appName</code>:</p><strong><c:out value="${lookupValue}"/></strong></c:when><c:otherwise><p><c:out value="${demoError}"/></p></c:otherwise></c:choose><p class="muted mt-3">The educational string resource comes from WEB-INF/web.xml and is separate from core JDBC setup.</p></div></section>
+<%@ include file="../fragments/footer.jsp" %>

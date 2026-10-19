@@ -1,0 +1,3 @@
+<%@ include file="../fragments/header.jsp" %>
+<section class="container catalog-page"><div class="page-title"><span class="eyebrow">RTU SYLLABUS / HISTORICAL CONCEPT</span><h1>Java Applets</h1></div><div class="form-panel-wide"><p>Applets were small Java programs embedded in web pages and hosted by a browser plug-in. Modern browsers no longer support that execution model.</p><p>ShopSphere demonstrates the concept historically only. The current application uses Jakarta Servlets and JSP on Tomcat and never depends on browser applet execution.</p></div></section>
+<%@ include file="../fragments/footer.jsp" %>
