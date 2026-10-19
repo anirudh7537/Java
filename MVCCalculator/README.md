@@ -1,58 +1,103 @@
-<<<<<<< 
+# MVC Calculator
 
-=======
-# MVC Calculator (Java Swing)
+## Overview
 
-A simple GUI-based calculator built in Java Swing, following the **MVC (Model-View-Controller)** architecture. It performs basic arithmetic operations — addition, subtraction, multiplication, and division.
+This project is a calculator organized around the
+**Model--View--Controller (MVC)** design pattern. MVC separates
+application data and logic from the user interface and the code that
+coordinates user actions.
 
-## Architecture
+The source files include `CalculatorModel.java`, `CalculatorView.java`,
+`CalculatorController.java`, and `Main.java`.
 
-View (Swing GUI) → Controller (ActionListener) → Model (Calculations)
+## Objectives
 
+-   Understand the Model--View--Controller pattern.
+-   Separate calculation logic from user-interface code.
+-   Learn how a controller receives input and coordinates model/view
+    behavior.
+-   Make a small application easier to maintain and extend.
 
-- **Model** (`CalculatorModel.java`) — Contains pure business logic (add, subtract, multiply, divide). No GUI code.
-- **View** (`CalculatorView.java`) — Builds the GUI using `JFrame`, `JLabel`, `JTextField`, and `JButton`. Never performs calculations.
-- **Controller** (`CalculatorController.java`) — Bridges View and Model. Reads input from View, calls Model methods, and displays the result back in View.
-- **Main** (`Main.java`) — Entry point that creates the View and Model, and wires them together via the Controller.
+## Technologies
 
-## Features
+-   Java / JDK
+-   MVC design pattern
+-   The exact UI toolkit should be confirmed in `CalculatorView.java`
+    (for example, Swing if it imports `javax.swing`).
 
-- Basic arithmetic: `+`, `-`, `*`, `/`
-- Clean separation of concerns via MVC
-- Division by zero handled gracefully (returns `0` instead of crashing)
+## Project structure
 
-## How to Run
-
-1. Clone the repository:
-```bash
-   git clone https://github.com/anirudh7537/mvc-calculator-java-swing.git
-   cd mvc-calculator-java-swing
+``` text
+MVCCalculator/
+├── CalculatorModel.java
+├── CalculatorView.java
+├── CalculatorController.java
+├── Main.java
+├── .gitignore
+└── README.md
 ```
 
-2. Compile:
-```bash
-   javac Main.java CalculatorView.java CalculatorModel.java CalculatorController.java
+## Responsibilities of each component
+
+-   **Model --- `CalculatorModel.java`:** contains the calculation state
+    and/or arithmetic operations.
+-   **View --- `CalculatorView.java`:** displays the calculator
+    interface and exposes user interactions.
+-   **Controller --- `CalculatorController.java`:** connects view
+    actions to model operations and updates the view.
+-   **Entry point --- `Main.java`:** starts the application and wires
+    the components together.
+
+Confirm the precise methods and supported operations by inspecting each
+source file.
+
+## Prerequisites
+
+-   Install a JDK compatible with the source.
+-   Open a terminal in the `MVCCalculator` directory.
+
+## Compile and run
+
+If the files use the default package and have no external dependencies:
+
+``` powershell
+javac *.java
+java Main
 ```
 
-3. Run:
-```bash
-   java Main
-```
+If the files declare a package, compile from the source root and run
+`Main` using its fully qualified class name. You can also open the
+folder in an IDE and run `Main.java`.
 
-## Demo
-| MVC Calculator |
-First Number [ 25 ]
-Second Number [ 10 ]
-[+] [-] [*] [/]
-Result [ 35.0 ]
+## MVC flow
 
-## Tech Stack
+A typical MVC interaction follows this sequence:
 
-- Java
-- Java Swing (GUI)
-- MVC Design Pattern
+1.  The user performs an action in the view.
+2.  The controller receives the action.
+3.  The controller asks the model to perform the calculation.
+4.  The model returns the result.
+5.  The controller tells the view to display the result.
 
-## Author
+## Testing checklist
 
-**Anirudh** — [GitHub](https://github.com/anirudh7537)
->>>>>>> 3b84be2 (Add README)
+-   Try each operation implemented by the calculator.
+-   Test zero and negative values where supported.
+-   Check how division by zero is handled if division is implemented.
+-   Check invalid or empty input handling.
+-   Confirm that calculation logic remains separate from UI
+    event-handling code.
+
+## Future improvements
+
+-   Add validation and friendly error messages.
+-   Add unit tests for the model.
+-   Add keyboard support and a clearer layout.
+-   Keep business logic independent from the UI toolkit.
+-   Document the exact operations supported by the current
+    implementation.
+
+## Learning outcome
+
+The project demonstrates how MVC can organize a small Java application
+into components with distinct responsibilities.
